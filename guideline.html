@@ -1,0 +1,127 @@
+
+<!DOCTYPE html><html lang="vi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Website Catalog Bất Động Sản - Guideline Phase 1</title>
+<style>
+body{font-family:Arial,sans-serif;line-height:1.6;max-width:1100px;margin:auto;padding:40px;background:#f6f4f1;color:#333}
+h1,h2,h3{color:#5f564d}code,pre{background:#eee;padding:2px 4px;border-radius:4px}pre{padding:12px;overflow:auto}
+table{border-collapse:collapse;width:100%}td,th{border:1px solid #ccc;padding:8px}th{background:#ddd}
+.section{background:#fff;padding:24px;margin:20px 0;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+</style></head><body>
+<h1>Guideline - Website Catalog Bất Động Sản (Phase 1)</h1>
+
+<div class="section">
+<h2>1. Mục tiêu</h2>
+<p>Xây dựng website catalog giới thiệu dự án bất động sản/thiết kế nội thất theo mô hình SPA, không cần backend, tối ưu chi phí và deploy miễn phí.</p>
+</div>
+
+<div class="section">
+<h2>2. Tech Stack</h2>
+<table>
+<tr><th>Thành phần</th><th>Đề xuất</th><th>Lý do</th></tr>
+<tr><td>Framework</td><td>React 19 + Vite + TypeScript</td><td>Nhanh, nhẹ, dễ mở rộng</td></tr>
+<tr><td>CSS</td><td>TailwindCSS</td><td>Responsive, utility-first</td></tr>
+<tr><td>Router</td><td>React Router DOM</td><td>SPA routing</td></tr>
+<tr><td>Animation</td><td>Framer Motion</td><td>Fade, scroll, hover</td></tr>
+<tr><td>Slider</td><td>Swiper</td><td>Hero & gallery</td></tr>
+<tr><td>Icon</td><td>Lucide React</td><td>Nhẹ, đẹp</td></tr>
+<tr><td>Gallery</td><td>Yet Another React Lightbox</td><td>Xem ảnh fullscreen</td></tr>
+<tr><td>SEO</td><td>React Helmet Async</td><td>Meta title/description</td></tr>
+<tr><td>Contact</td><td>EmailJS hoặc FormSubmit</td><td>Không cần backend</td></tr>
+</table>
+</div>
+
+<div class="section">
+<h2>3. Routing</h2>
+<pre>/
+/gioi-thieu
+/du-an
+/du-an/:slug
+/bao-gia</pre>
+</div>
+
+<div class="section">
+<h2>4. Cấu trúc thư mục</h2>
+<pre>src/
+  assets/
+  components/
+  layouts/
+  pages/
+  data/
+  hooks/
+  utils/
+  styles/
+  App.tsx</pre>
+</div>
+
+<div class="section">
+<h2>5. Quản lý dữ liệu</h2>
+<p>Lưu dữ liệu dạng TypeScript/JSON trong <code>src/data</code>.</p>
+<pre>export const projects = [{
+ id:1,
+ slug:"akari-binh-tan",
+ title:"Akari Bình Tân",
+ category:"Apartment",
+ thumbnail:"/images/projects/akari/thumb.webp",
+ gallery:["..."],
+ description:"..."
+}]</pre>
+</div>
+
+<div class="section">
+<h2>6. Hình ảnh</h2>
+<ul>
+<li>Đặt trong <code>public/images</code></li>
+<li>Định dạng WebP</li>
+<li>Lazy Loading</li>
+<li>Tối ưu kích thước trước khi upload</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>7. Chức năng</h2>
+<ul>
+<li>Trang chủ</li>
+<li>Giới thiệu</li>
+<li>Danh sách dự án + Filter</li>
+<li>Chi tiết dự án</li>
+<li>Báo giá</li>
+<li>Liên hệ</li>
+<li>Gallery ảnh</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>8. Deploy</h2>
+<ul>
+<li>GitHub</li>
+<li>Vercel Free Hosting</li>
+<li>Domain: yourname.vercel.app</li>
+<li>Sau này trỏ domain .com/.vn</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>9. Kiến trúc</h2>
+<pre>Visitor
+   │
+React + Vite SPA
+   ├── Static Data
+   ├── Images
+   └── EmailJS/FormSubmit
+        │
+      Vercel CDN</pre>
+</div>
+
+<div class="section">
+<h2>10. Phase 2</h2>
+<ul>
+<li>Spring Boot REST API</li>
+<li>PostgreSQL</li>
+<li>Cloudinary</li>
+<li>Admin Dashboard</li>
+<li>Authentication</li>
+<li>CRUD Project/Category</li>
+</ul>
+</div>
+
+</body></html>
