@@ -1,0 +1,7 @@
+{
+  "buildCommand": "cd ap-catalog && npm install && npm run build",
+  "outputDirectory": "ap-catalog/dist",
+  "installCommand": "echo skip",
+  "framework": null,
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+}
